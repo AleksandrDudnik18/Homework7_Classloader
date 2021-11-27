@@ -1,8 +1,8 @@
-package task1.plugins;
+import task1.plugins.Plugin;
 
 public class Outer implements Plugin {
     @Override
     public void action(String s) {
-        System.out.println(s);
+        Dialog.show(s);
     }
 }

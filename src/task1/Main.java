@@ -1,14 +1,16 @@
 package task1;
 
-public class Main {
 
-    public static final String PLUGIN_ROOT = "plugins";
+import task1.plugins.Plugin;
+import task1.plugins.PluginManager;
+
+public class Main {
+    private static final String pluginRoot = "plugins";
 
     public static void main(String[] args) {
-
-        PluginManager pluginManager = new PluginManager(PLUGIN_ROOT);
-        Plugin pluginOuter = pluginManager.load("OuterDialog", "Outer");
-
-        pluginOuter.doUseful();
+        PluginManager pluginManager = new PluginManager(pluginRoot);
+        Plugin outer = pluginManager.load(
+                "OuterDialog", "Outer");
+        outer.action("Message");
     }
 }
